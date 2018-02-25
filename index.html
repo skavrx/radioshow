@@ -19,55 +19,43 @@
     </div>
 
     <div class="main">
+      <div class="btn backward" id="backward">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+      </div>
+        <div onclick="togglePlay()" class="btn play" id="playbutton">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+        </div>
+        <div class="btn play" id="forward">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+        </div>
+
+        <div class="channels">
+          <span class="channel slot-1" id="slot-1"></span>
+          <span class="channel slot-2" id="slot-2"></span>
+          <span class="channel slot-3" id="slot-3"></span>
+          <span class="channel selection" id="selection"></span>
+          <span class="channel slot-4" id="slot-4"></span>
+          <span class="channel slot-5" id="slot-5"></span>
+          <span class="channel slot-6" id="slot-6"></span>
+        </div>
     </div>
 
     <div class="footer">
         <span class=footer-date>2018</span>
     </div>
 
-    <!--
+    <canvas id="canvas"></canvas>
+
     <audio id="audio" controls>
       <source src="" type="audio/mpeg">
           Your browser does not support the audio element.
-      </audio>
--->
-    <script>
-        $(document).ready(function() {
-            var icon = $('.play');
-            icon.click(function() {
-                icon.toggleClass('active');
-                return false;
-            });
-        });
+    </audio>
 
-        var socket = io('http://localhost:' + window.location.port);
-
-        var audio = document.getElementById('audioSource');
-
-        console.log("hoi");
-        socket.on('start', function(data) {
-            console.log("start");
-            console.log(data);
-            // socket.emit('my other event', { my: 'data' });
-            socket.emit('stream', {
-                my: 'data'
-            });
-            console.log("");
-            ss(socket).on('audio-stream', function(stream, data) {
-                parts = [];
-                console.log("DATA -->> ")
-                stream.on('data', (chunk) => {
-                    console.log(chunk);
-                    parts.push(chunk);
-                });
-                stream.on('end', function() {
-                    var audio = document.getElementById('audio');
-                    audio.src = (window.URL || window.webkitURL).createObjectURL(new Blob(parts));
-                    audio.play();
-                });
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/music.js"></script>
 </body>
 
 </html>
