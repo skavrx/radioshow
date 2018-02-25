@@ -133,12 +133,72 @@ body {
   transform: translateX(20px) translateY(5px) rotate(-125deg);
 }
 
+.btn.backward .bar-1 {
+  transform: translateX(18px) translateY(-5px) rotate(55deg);
+}
+
+.btn.backward .bar-2 {
+  transform: translateX(18px) translateY(5px) rotate(125deg);
+}
+
 audio {
   display: none;
 }
 
 #playbutton {
   position: fixed;
-  bottom: 0px;
-  right: 0px;
+  bottom: 45%;
+  right: 25%;
+}
+
+#forward {
+  position: fixed;
+  bottom: 45%;
+  right: 20%;
+}
+
+#backward {
+  position: fixed;
+  bottom: 45%;
+  right: 30%;
+}
+
+.channels {}
+
+.channel {
+  vertical-align: middle;
+  font-family: 'Louis George Cafe', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  font-style: normal;
+  font-size-adjust: auto;
+  text-indent: 20px;
+}
+
+.channel .selection {
+
+}
+
+.channel .slot-1 {
+
+}
+
+.channel .slot-1 {
+
+}
+
+.channel .slot-1 {
+
+}
+
+.channel .slot-1 {
+
+}
+
+.channel .slot-1 {
+
+}
+
+.channel .slot-1 {
+
 }
